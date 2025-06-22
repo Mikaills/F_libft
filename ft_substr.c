@@ -45,10 +45,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (i < len)
 	{
-		substr[i] = s[start];
-		start++;
+		substr[i] = s[start + i];
 		i++;
 	}
-	substr[i] = '\0';
+	substr[sub_len] = '\0';
 	return (substr);
 }
