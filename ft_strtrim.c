@@ -69,8 +69,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_malloc_len_end(s1, set);
 	s1_len_y = ft_strlen(s1);
 	i = 0;
-	if (!s1 || !set)
-		return (NULL);
 	if (start + end > s1_len_y)
 		s1_len_y = 0;
 	else
