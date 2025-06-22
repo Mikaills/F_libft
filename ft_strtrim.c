@@ -82,11 +82,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = ft_malloc_len_start(s1, set);
 	end = ft_malloc_len_end(s1, set);
+	s1_len_y = ft_strlen(s1);
 	i = 0;
 	if (!blank_space(s1))
 		return ("");
-	s1_len_y = ft_strlen(s1) - (ft_malloc_len_start(s1, set)
-			+ ft_malloc_len_end(s1, set));
+	if (start + end > s1_len_y)
+		s1_len_y = 0;
+	else
+		s1_len_y = s1_len_y - start - end;
 	str_trimmed = malloc(sizeof(char) * (s1_len_y + 1));
 	if (!str_trimmed)
 		return (NULL);
