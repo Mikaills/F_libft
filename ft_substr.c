@@ -30,6 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	s_len;
 	size_t	sub_len;
+
 	if (!s)
 		return (NULL);
 	i = 0;
