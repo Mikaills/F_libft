@@ -26,21 +26,6 @@ static char	ft_set_check(char const s1_char, char const *set)
 	return (0);
 }
 
-static int	blank_space(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == '\v'
-		|| s[i] == '\f' || s[i] == '\r')
-	{
-		i++;
-	}
-	if (s[i] != '\0')
-		return (1);
-	return (0);
-}
-
 static size_t	ft_malloc_len_start(char const *s1, char const *set)
 {
 	size_t	i;
@@ -86,8 +71,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (!s1 || !set)
 		return (NULL);
-	if (!blank_space(s1))
-		return ("");
 	if (start + end > s1_len_y)
 		s1_len_y = 0;
 	else
